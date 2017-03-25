@@ -6,7 +6,7 @@ var About = React.createClass({
       <div>
         <h1>About</h1>
         <p>
-          This application uses the following technologies:
+          This amazing application uses the following technologies:
           <ul>
             <li>React</li>
             <li>React Router</li>
