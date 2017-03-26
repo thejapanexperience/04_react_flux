@@ -49264,9 +49264,9 @@ var Header = React.createClass({displayName: "Header",
             React.createElement("img", {src: "images/pluralsight-logo.png", alt: ""})
           ), 
           React.createElement("ul", {className: "nav navbar-nav"}, 
-            React.createElement("li", null, React.createElement("a", {href: "/"}, "Home")), 
-            React.createElement("li", null, React.createElement("a", {href: "/#authors"}, "Authors")), 
-            React.createElement("li", null, React.createElement("a", {href: "/#about"}, "About"))
+            React.createElement("li", null, React.createElement(Link, {to: "app"}, "Home")), 
+            React.createElement("li", null, React.createElement(Link, {to: "authors"}, "Authors")), 
+            React.createElement("li", null, React.createElement(Link, {to: "about"}, "About"))
           )
         )
       )
