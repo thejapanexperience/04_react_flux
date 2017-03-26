@@ -49138,7 +49138,7 @@ module.exports = {
 
 },{}],200:[function(require,module,exports){
 var React = require('react');
-var Link = Require('react-router').Link;
+var Link = require('react-router').Link;
 
 var NotFoundRoute = React.createClass({displayName: "NotFoundRoute",
   render: function() {
@@ -49154,7 +49154,7 @@ var NotFoundRoute = React.createClass({displayName: "NotFoundRoute",
 
 module.exports = NotFoundRoute;
 
-},{"react":197}],201:[function(require,module,exports){
+},{"react":197,"react-router":28}],201:[function(require,module,exports){
 var React = require('react');
 
 var About = React.createClass({displayName: "About",
@@ -49329,13 +49329,17 @@ var Router = require('react-router');
 var DefaultRoute = Router.DefaultRoute;
 var Route = Router.Route;
 var NotFoundRoute = Router.NotFoundRoute;
+var Redirect = Router.Redirect;
 
 var routes = (
   React.createElement(Route, {name: "app", path: "/", handler: require('./components/app')}, 
     React.createElement(DefaultRoute, {handler: require ('./components/homePage')}), 
     React.createElement(Route, {name: "authors", handler: require('./components/authors/authorPage')}), 
     React.createElement(Route, {name: "about", handler: require('./components/about/aboutPage')}), 
-    React.createElement(NotFoundRoute, {handler: require('./components/404')})
+    React.createElement(NotFoundRoute, {handler: require('./components/404')}), 
+    React.createElement(Redirect, {from: "about-us", to: "about"}), 
+    React.createElement(Redirect, {from: "awthors", to: "authors"}), 
+    React.createElement(Redirect, {from: "about/*", to: "about"})
   )
 );
 

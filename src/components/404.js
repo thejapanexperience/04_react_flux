@@ -1,5 +1,5 @@
 var React = require('react');
-var Link = Require('react-router').Link;
+var Link = require('react-router').Link;
 
 var NotFoundRoute = React.createClass({
   render: function() {
