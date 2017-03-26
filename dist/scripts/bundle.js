@@ -29029,7 +29029,7 @@ var About = React.createClass({displayName: "About",
       React.createElement("div", null, 
         React.createElement("h1", null, "About"), 
         React.createElement("p", null, 
-          "This application uses the following technologies:", 
+          "This amazing application uses the following technologies:", 
           React.createElement("ul", null, 
             React.createElement("li", null, "React"), 
             React.createElement("li", null, "React Router"), 
@@ -29076,12 +29076,23 @@ var App = React.createClass({displayName: "App",
     var Child;
 
     switch(this.props.route) {
-      case 'about' : Child = About;
-      break;
+      case 'about' : Child = About; break;
       default: Child = Home;
     }
+
+    return (
+      React.createElement("div", null, 
+        React.createElement(Child, null)
+      )
+    );
   }
 })
 
-React.render(React.createElement(Home, null), document.getElementById('app'));
+function render() {
+  var route = window.location.hash.substr(1);
+  React.render(React.createElement(App, {route: route}), document.getElementById('app'));
+}
+
+window.addEventListener('hashchange', render);
+render();
 },{"./components/about/aboutPage":158,"./components/homePage":159,"jquery":2,"react":157}]},{},[160]);
