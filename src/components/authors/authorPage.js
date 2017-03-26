@@ -11,9 +11,17 @@ getInitialState: function(){
 
 componentWillMount: function() {
   this.setState({authors: AuthorApi.getAllAuthors()})
-}
+},
 
   render: function () {
+    var createAuthorRow = funciton(author) {
+      return (
+        <tr key={author.id}>
+          <td><a href={"/#authors/" + author.id}>{author.id}</a></td>
+          <td>{author.firstName} {author.lastName}</td>
+        </tr>
+      )
+    }
     return (
       <div>
         <h1>Authors</h1>
