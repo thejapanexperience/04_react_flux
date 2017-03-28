@@ -9,7 +9,7 @@ var Input = React.createClass({
     placeholder: React.PropTypes.string,
     value: React.PropTypes.string,
     error: React.PropTypes.string,
-  }
+  },
 
   render: function() {
 
