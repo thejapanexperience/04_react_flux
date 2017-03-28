@@ -4,6 +4,7 @@ var Link = Router.Link;
 
 var Home = React.createClass({
   render: function() {
+    console.log('this: ', this)
     return (
       <div className="jumbotron">
         <h1>Pluralsight Administration</h1>
