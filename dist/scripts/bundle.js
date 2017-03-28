@@ -49241,7 +49241,8 @@ var ManageAuthorPage = React.createClass({displayName: "ManageAuthorPage",
     console.log('this.state.author: ', this.state.author)
     return(
       React.createElement(AuthorForm, {
-        author: this.state.author}
+        author: this.state.author, 
+        onChange: this.setAuthorState}
       )
     );
   }
@@ -49265,7 +49266,8 @@ var AuthorForm = React.createClass({displayName: "AuthorForm",
           className: "form-control", 
           placeholder: "First Name", 
           ref: "firstName", 
-          value: this.props.author.firstName}
+          value: this.props.author.firstName, 
+          onChange: this.props.onChange}
         ), 
         React.createElement("br", null), 
 
@@ -49276,7 +49278,8 @@ var AuthorForm = React.createClass({displayName: "AuthorForm",
           className: "form-control", 
           placeholder: "Last Name", 
           ref: "lastName", 
-          value: this.props.author.lastName}
+          value: this.props.author.lastName, 
+          onChange: this.props.onChange}
         ), 
         React.createElement("br", null), 
 

@@ -14,6 +14,7 @@ var AuthorForm = React.createClass({
           placeholder="First Name"
           ref="firstName"
           value={this.props.author.firstName}
+          onChange={this.props.onChange}
         />
         <br />
 
@@ -25,6 +26,7 @@ var AuthorForm = React.createClass({
           placeholder="Last Name"
           ref="lastName"
           value={this.props.author.lastName}
+          onChange={this.props.onChange}
         />
         <br />
 
