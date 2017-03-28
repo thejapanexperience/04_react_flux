@@ -27,7 +27,7 @@ var ManageAuthorPage = React.createClass({
 
   authorFormIsValid: function() {
     var formIsValid = true;
-    this.state.error = {}; // clear any previous errors
+    this.state.errors = {}; // clear any previous errors
     if (this.state.author.firstName.length < 3){
       this.state.errors.firstName = 'First name must be at least 3 characters';
       formIsValid = false;
@@ -60,6 +60,7 @@ var ManageAuthorPage = React.createClass({
         author={this.state.author}
         onChange={this.setAuthorState}
         onSave={this.saveAuthor}
+        errors={this.state.errors}
       />
     );
   }

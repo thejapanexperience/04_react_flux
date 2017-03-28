@@ -49685,7 +49685,7 @@ var ManageAuthorPage = React.createClass({displayName: "ManageAuthorPage",
 
   authorFormIsValid: function() {
     var formIsValid = true;
-    this.state.error = {}; // clear any previous errors
+    this.state.errors = {}; // clear any previous errors
     if (this.state.author.firstName.length < 3){
       this.state.errors.firstName = 'First name must be at least 3 characters';
       formIsValid = false;
@@ -49717,7 +49717,8 @@ var ManageAuthorPage = React.createClass({displayName: "ManageAuthorPage",
       React.createElement(AuthorForm, {
         author: this.state.author, 
         onChange: this.setAuthorState, 
-        onSave: this.saveAuthor}
+        onSave: this.saveAuthor, 
+        errors: this.state.errors}
       )
     );
   }
@@ -49731,6 +49732,13 @@ var Input = require('../common/textInput')
 
 var AuthorForm = React.createClass({displayName: "AuthorForm",
 
+  propTypes: {
+    author: React.PropTypes.object.isRequired,
+    onSave: React.PropTypes.func.isRequired,
+    onChange: React.PropTypes.func.isRequired,
+    errors: React.PropTypes.object,
+  },
+
   render: function() {
     return(
       React.createElement("form", null, 
@@ -49740,14 +49748,16 @@ var AuthorForm = React.createClass({displayName: "AuthorForm",
           label: "First Name", 
           placeholder: "First Name", 
           value: this.props.author.firstName, 
-          onChange: this.props.onChange}
+          onChange: this.props.onChange, 
+          error: this.props.errors.firstName}
         ), 
         React.createElement(Input, {
           name: "lastName", 
           label: "Last Name", 
           placeholder: "Last Name", 
           value: this.props.author.lastName, 
-          onChange: this.props.onChange}
+          onChange: this.props.onChange, 
+          error: this.props.errors.lastName}
         ), 
         React.createElement("input", {type: "submit", value: "Save", className: "btn btn-default", onClick: this.props.onSave})
       )
