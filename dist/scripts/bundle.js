@@ -49252,6 +49252,7 @@ module.exports = ManageAuthorPage;
 
 },{"./authorForm":204,"react":197}],204:[function(require,module,exports){
 var React = require('react');
+var I
 
 var AuthorForm = React.createClass({displayName: "AuthorForm",
 
